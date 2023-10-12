@@ -16,65 +16,69 @@ function loadPdfMakeLibrary(callback) {
 
 // Function to generate timetable
 function generateTimetable() {
-  // Ensure pdfmake is available before proceeding
-  if (typeof pdfmake !== 'undefined') {
-    const subject = document.getElementById('subject').value;
-    const difficulty = document.getElementById('difficulty').value;
-    const studyTime = parseInt(document.getElementById('studyTime').value);
+  const subject = document.getElementById('subject').value;
+  const difficulty = document.getElementById('difficulty').value;
+  const studyTime = parseInt(document.getElementById('studyTime').value);
 
-    // Customize formulas and topics based on the selected subject
-    let formulasContent, topicsContent;
+  // Customize formulas and topics based on the selected subject
+  let formulasContent, topicsContent;
 
-    switch (subject) {
-      case 'math':
-        formulasContent = 'Math Formulas:\nFormula 1: ...\nFormula 2: ...';
-        topicsContent = 'Math Topics:\nTopic 1: ...\nTopic 2: ...';
-        break;
-      case 'physics':
-        formulasContent = 'Physics Formulas:\nFormula 1: ...\nFormula 2: ...';
-        topicsContent = 'Physics Topics:\nTopic 1: ...\nTopic 2: ...';
-        break;
-      case 'chemistry':
-        formulasContent = 'Chemistry Formulas:\nFormula 1: ...\nFormula 2: ...';
-        topicsContent = 'Chemistry Topics:\nTopic 1: ...\nTopic 2: ...';
-        break;
-      case 'bio':
-        formulasContent = 'Biology Formulas:\nFormula 1: ...\nFormula 2: ...';
-        topicsContent = 'Biology Topics:\nTopic 1: ...\nTopic 2: ...';
-        break;
-      default:
-        formulasContent = 'Formulas:\nFormula 1: ...\nFormula 2: ...';
-        topicsContent = 'Topics:\nTopic 1: ...\nTopic 2: ...';
-    }
+  switch (subject) {
+    case 'math':
+      formulasContent = 'Math Formulas:\nFormula 1: ...\nFormula 2: ...';
+      topicsContent = 'Math Topics:\nTopic 1: ...\nTopic 2: ...';
+      break;
+    case 'physics':
+      formulasContent = 'Physics Formulas:\nFormula 1: ...\nFormula 2: ...';
+      topicsContent = 'Physics Topics:\nTopic 1: ...\nTopic 2: ...';
+      break;
+    case 'chemistry':
+      formulasContent = 'Chemistry Formulas:\nFormula 1: ...\nFormula 2: ...';
+      topicsContent = 'Chemistry Topics:\nTopic 1: ...\nTopic 2: ...';
+      break;
+    case 'bio':
+      formulasContent = 'Biology Formulas:\nFormula 1: ...\nFormula 2: ...';
+      topicsContent = 'Biology Topics:\nTopic 1: ...\nTopic 2: ...';
+      break;
+    default:
+      formulasContent = 'Formulas:\nFormula 1: ...\nFormula 2: ...';
+      topicsContent = 'Topics:\nTopic 1: ...\nTopic 2: ...';
+  }
 
-    // Generate the content for the PDF
-    const content = [
-      { text: `Subject: ${subject}\nDifficulty: ${difficulty}\nTotal Study Time: ${studyTime} minutes`, style: 'header' },
-      { text: 'Important Topics:', style: 'subheader' },
-      { text: topicsContent },
-      { text: 'Formulas:', style: 'subheader' },
-      { text: formulasContent }
-    ];
+  // Generate the content for the PDF
+  const content = [
+    { text: `Subject: ${subject}\nDifficulty: ${difficulty}\nTotal Study Time: ${studyTime} minutes`, style: 'header' },
+    { text: 'Important Topics:', style: 'subheader' },
+    { text: topicsContent },
+    { text: 'Formulas:', style: 'subheader' },
+    { text: formulasContent }
+  ];
 
-    // Define PDF document definition
-    const docDefinition = {
-      content: content,
-      styles: {
-        header: {
-          fontSize: 18,
-          bold: true,
-          margin: [0, 0, 0, 10]
-        },
-        subheader: {
-          fontSize: 14,
-          bold: true,
-          margin: [0, 10, 0, 5]
-        }
+  // Define PDF document definition
+  const docDefinition = {
+    content: content,
+    styles: {
+      header: {
+        fontSize: 18,
+        bold: true,
+        margin: [0, 0, 0, 10]
+      },
+      subheader: {
+        fontSize: 14,
+        bold: true,
+        margin: [0, 10, 0, 5]
       }
-    };
+    }
+  };
 
-    // Generate PDF using pdfmake
-    pdfmake.createPdf(docDefinition).download('study_timetable.pdf');
-  } else {
-    console.error('pdfmake is not available.');
- 
+  // Generate PDF using pdfmake
+  pdfmake.createPdf(docDefinition).download('study_timetable.pdf');
+}
+
+// Function to handle button click
+function handleButtonClick() {
+  // Load pdfmake library dynamically
+  loadPdfMakeLibrary(function() {
+    generateTimetable();
+  });
+}
