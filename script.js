@@ -32,12 +32,14 @@ function generateTimetable() {
   const timetableMessage = `Subject: ${subject}\nDifficulty: ${difficulty}\nTotal Study Time: ${studyTime} minutes\n\nImportant Topics:\n\n${topicsContent}\n\n${formulasContent}`;
 
   // Create a jsPDF instance for the timetable
-  const pdf = new jsPDF();
+  const pdf = new jsPDF(); // jsPDF is now expected to be globally available
+
   pdf.setFontSize(12);
   pdf.text(timetableMessage, 10, 10);
 
   // Create a jsPDF instance for the formulas and topics
-  const pdfFormulasTopics = new jsPDF();
+  const pdfFormulasTopics = new jsPDF(); // jsPDF is now expected to be globally available
+
   pdfFormulasTopics.setFontSize(12);
   pdfFormulasTopics.text(formulasContent, 10, 10);
 
