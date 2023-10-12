@@ -1,11 +1,3 @@
-function loadJsPdfLibrary(callback) {
-  const script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src = 'jspdf.umd.min.js';
-  script.onload = callback;
-  document.head.appendChild(script);
-}
-
 function generateTimetable() {
   const subject = document.getElementById('subject').value;
   const difficulty = document.getElementById('difficulty').value;
@@ -36,33 +28,32 @@ function generateTimetable() {
       topicsContent = 'Topics:\nTopic 1: ...\nTopic 2: ...';
   }
 
-  // Generate timetable message
-  const timetableMessage = `Subject: ${subject}\nDifficulty: ${difficulty}\nTotal Study Time: ${studyTime} minutes\n\nImportant Topics:\n\n${topicsContent}\n\n${formulasContent}`;
+  // Generate the content for the PDF
+  const content = [
+    { text: `Subject: ${subject}\nDifficulty: ${difficulty}\nTotal Study Time: ${studyTime} minutes`, style: 'header' },
+    { text: 'Important Topics:', style: 'subheader' },
+    { text: topicsContent },
+    { text: 'Formulas:', style: 'subheader' },
+    { text: formulasContent }
+  ];
 
-  // Create a jsPDF instance for the timetable
-  const pdf = new jsPDF();
-
-  pdf.setFontSize(12);
-  pdf.text(timetableMessage, 10, 10);
-
-  // Create a jsPDF instance for the formulas and topics
-  const pdfFormulasTopics = new jsPDF();
-
-  if (typeof jsPDF !== 'undefined') {
-      const pdf = new jsPDF();
-      // Rest of your code...
-    } else {
-      console.error('jsPDF is not available.');
+  // Define PDF document definition
+  const docDefinition = {
+    content: content,
+    styles: {
+      header: {
+        fontSize: 18,
+        bold: true,
+        margin: [0, 0, 0, 10]
+      },
+      subheader: {
+        fontSize: 14,
+        bold: true,
+        margin: [0, 10, 0, 5]
+      }
     }
-  });
-}
+  };
 
-  pdfFormulasTopics.setFontSize(12);
-  pdfFormulasTopics.text(formulasContent, 10, 10);
-
-  // Save the timetable PDF with a specific name
-  pdf.save('study_timetable.pdf');
-
-  // Save the formulas/topics PDF with a specific name
-  pdfFormulasTopics.save('formulas_topics.pdf');
+  // Generate PDF using pdfmake
+  pdfmake.createPdf(docDefinition).download('study_timetable.pdf');
 }
