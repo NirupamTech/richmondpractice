@@ -1,19 +1,3 @@
-// Function to load pdfmake library dynamically
-function loadPdfMakeLibrary(callback) {
-  const script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js';
-  script.onload = function() {
-    // After pdfmake is loaded, load vfs_fonts as well
-    const scriptVfs = document.createElement('script');
-    scriptVfs.type = 'text/javascript';
-    scriptVfs.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js';
-    scriptVfs.onload = callback;
-    document.head.appendChild(scriptVfs);
-  };
-  document.head.appendChild(script);
-}
-
 // Function to generate timetable
 function generateTimetable() {
   const subject = document.getElementById('subject').value;
@@ -73,12 +57,4 @@ function generateTimetable() {
 
   // Generate PDF using pdfmake
   pdfmake.createPdf(docDefinition).download('study_timetable.pdf');
-}
-
-// Function to handle button click
-function handleButtonClick() {
-  // Load pdfmake library dynamically
-  loadPdfMakeLibrary(function() {
-    generateTimetable();
-  });
 }
