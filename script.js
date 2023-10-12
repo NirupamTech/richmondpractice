@@ -1,3 +1,11 @@
+function loadJsPdfLibrary(callback) {
+  const script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = 'jspdf.umd.min.js';
+  script.onload = callback;
+  document.head.appendChild(script);
+}
+
 function generateTimetable() {
   const subject = document.getElementById('subject').value;
   const difficulty = document.getElementById('difficulty').value;
