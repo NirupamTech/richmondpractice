@@ -1,3 +1,18 @@
+function loadPdfMakeLibrary(callback) {
+  const script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js';
+  script.onload = function() {
+    // After pdfmake is loaded, load vfs_fonts as well
+    const scriptVfs = document.createElement('script');
+    scriptVfs.type = 'text/javascript';
+    scriptVfs.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js';
+    scriptVfs.onload = callback;
+    document.head.appendChild(scriptVfs);
+  };
+  document.head.appendChild(script);
+}
+
 function generateTimetable() {
   const subject = document.getElementById('subject').value;
   const difficulty = document.getElementById('difficulty').value;
@@ -37,6 +52,21 @@ function generateTimetable() {
     { text: formulasContent }
   ];
 
+
+  if (typeof pdfmake !== 'undefined') {
+      const docDefinition = {
+        content: [
+          // PDF content definition
+        ]
+      };
+
+      pdfmake.createPdf(docDefinition).download('study_timetable.pdf');
+    } else {
+      console.error('pdfmake is not available.');
+    }
+  });
+
+  
   // Define PDF document definition
   const docDefinition = {
     content: content,
