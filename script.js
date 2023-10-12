@@ -48,6 +48,15 @@ function generateTimetable() {
   // Create a jsPDF instance for the formulas and topics
   const pdfFormulasTopics = new jsPDF();
 
+  if (typeof jsPDF !== 'undefined') {
+      const pdf = new jsPDF();
+      // Rest of your code...
+    } else {
+      console.error('jsPDF is not available.');
+    }
+  });
+}
+
   pdfFormulasTopics.setFontSize(12);
   pdfFormulasTopics.text(formulasContent, 10, 10);
 
