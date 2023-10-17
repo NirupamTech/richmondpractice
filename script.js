@@ -1,6 +1,3 @@
-// Import the getFormulasBySubject function from formulas.js
-import { getFormulasBySubject } from './formulas.js';
-
 function generateTimetable() {
   const subject = document.getElementById('subject').value;
   const difficulty = document.getElementById('difficulty').value;
