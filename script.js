@@ -14,31 +14,24 @@ function generateTimetable() {
     ${formulasContent}
   `;
 
-  const htmlContent = `
-    <html>
-      <head>
-        <title>Study Timetable</title>
-      </head>
-      <body>
-        <pre>${content}</pre>
-      </body>
-    </html>
-  `;
+  const printWindow = window.open('', '_blank');
+  printWindow.document.write('<html><head><title>Study Timetable</title></head><body>');
+  printWindow.document.write('<pre>' + content + '</pre>');
+  printWindow.document.write('</body></html>');
+  printWindow.document.close();
 
-  const blob = new Blob([htmlContent], { type: 'text/html' });
-  const url = URL.createObjectURL(blob);
-
-  const printWindow = window.open(url, '_blank');
+  // Wait for content to load before printing
   printWindow.onload = function() {
     printWindow.print();
     printWindow.onafterprint = function() {
-      URL.revokeObjectURL(url);
       printWindow.close();
     };
   };
 }
 
+// Rest of your code for getting formulas from formulas.js
+
 // Function to get formulas based on subject
 function getFormulasBySubject(subject) {
-  return window.getFormulasBySubject(subject);
+  return getFormulasBySubject(subject);
 }
