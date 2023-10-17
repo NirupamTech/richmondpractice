@@ -1,4 +1,4 @@
-// Define the formulas for each subject
+/// Define the formulas for each subject
 const mathFormulas = `
 Math Formulas:
 Formula 1: ...
