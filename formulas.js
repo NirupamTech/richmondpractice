@@ -56,3 +56,4 @@ function getFormulasBySubject(subject) {
 
 // Make the function accessible globally
 window.getFormulasBySubject = getFormulasBySubject;
+//
