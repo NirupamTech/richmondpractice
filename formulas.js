@@ -1,50 +1,43 @@
+// Define the formulas for each subject
 const mathFormulas = `
 Math Formulas:
-Topic 1:
-  - Formula 1 for Topic 1
-  - Formula 2 for Topic 1
-Topic 2:
-  - Formula 1 for Topic 2
-  - Formula 2 for Topic 2
+Formula 1: ...
+Formula 2: ...
 `;
 
 const physicsFormulas = `
 Physics Formulas:
-Topic 1:
-  - Formula 1 for Topic 1
-  - Formula 2 for Topic 1
-Topic 2:
-  - Formula 1 for Topic 2
-  - Formula 2 for Topic 2
+Formula 1: ...
+Formula 2: ...
 `;
 
 const chemistryFormulas = `
 Chemistry Formulas:
-Topic 1:
-  - Formula 1 for Topic 1
-  - Formula 2 for Topic 1
-Topic 2:
-  - Formula 1 for Topic 2
-  - Formula 2 for Topic 2
+Formula 1: ...
+Formula 2: ...
 `;
 
 const bioFormulas = `
 Biology Formulas:
-Topic 1:
-  - Formula 1 for Topic 1
-  - Formula 2 for Topic 1
-Topic 2:
-  - Formula 1 for Topic 2
-  - Formula 2 for Topic 2
+Formula 1: ...
+Formula 2: ...
 `;
 
-// Export the formulas
-const formulas = {
-  mathFormulas,
-  physicsFormulas,
-  chemistryFormulas,
-  bioFormulas
-};
+// Function to get formulas based on subject
+function getFormulasBySubject(subject) {
+  switch (subject) {
+    case 'math':
+      return mathFormulas;
+    case 'physics':
+      return physicsFormulas;
+    case 'chemistry':
+      return chemistryFormulas;
+    case 'bio':
+      return bioFormulas;
+    default:
+      return 'Formulas for this subject are not available.';
+  }
+}
 
-// Make the formulas accessible globally
-window.formulas = formulas;
+// Make the function accessible globally
+window.getFormulasBySubject = getFormulasBySubject;
