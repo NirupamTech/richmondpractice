@@ -24,7 +24,7 @@ Formula 2: ...
 `;
 
 // Function to get formulas based on subject
-export function getFormulasBySubject(subject) {
+function getFormulasBySubject(subject) {
   switch (subject) {
     case 'math':
       return mathFormulas;
@@ -38,3 +38,6 @@ export function getFormulasBySubject(subject) {
       return 'Formulas for this subject are not available.';
   }
 }
+
+// Make the function accessible globally
+window.getFormulasBySubject = getFormulasBySubject;
