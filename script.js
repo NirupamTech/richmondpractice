@@ -4,57 +4,27 @@ function generateTimetable() {
   const studyTime = parseInt(document.getElementById('studyTime').value);
 
   const formulasContent = getFormulasBySubject(subject);
+  const topicsContent = getTopicsBySubject(subject);
 
-  const content = [
-    {
-      text: `Subject: ${subject}\nDifficulty: ${difficulty}\nTotal Study Time: ${studyTime} minutes`,
-      style: 'subheader',
-      alignment: 'center'
-    },
-    {
-      text: 'Important Topics:',
-      style: 'subheader',
-      alignment: 'center'
-    },
-    {
-      text: getTopicsBySubject(subject),
-      alignment: 'center'
-    },
-    {
-      text: 'Formulas:',
-      style: 'subheader',
-      alignment: 'center'
-    },
-    {
-      text: formulasContent,
-      alignment: 'center'
-    }
-  ];
+  const content = `
+    Subject: ${subject}
+    Difficulty: ${difficulty}
+    Total Study Time: ${studyTime} minutes
 
-  const docDefinition = {
-    content: content,
-    styles: {
-      header: {
-        fontSize: 24,
-        bold: true,
-        margin: [0, 0, 0, 10],
-        color: 'blue'
-      },
-      subheader: {
-        fontSize: 18,
-        bold: true,
-        margin: [0, 10, 0, 5]
-      }
-    }
-  };
+    Important Topics:
+    ${topicsContent}
 
-  const pdf = pdfMake.createPdf(docDefinition);
-  pdf.download('study_timetable.pdf');
-}
+    Formulas:
+    ${formulasContent}
+  `;
 
-// Function to get topics based on subject
-function getTopicsBySubject(subject) {
-  // Add logic to get topics based on subject
-  // This is just a placeholder
-  return 'Topics for this subject:\nTopic 1: ...\nTopic 2: ...';
+  // Create a new window to print the content
+  const printWindow = window.open('', '_blank');
+  printWindow.document.write('<html><head><title>Study Timetable</title></head><body>');
+  printWindow.document.write('<pre>' + content + '</pre>');
+  printWindow.document.write('</body></html>');
+  printWindow.document.close();
+
+  // Print the window
+  printWindow.print();
 }
