@@ -38,9 +38,7 @@ function generateTimetable() {
   };
 }
 
-// Rest of your code for getting formulas from formulas.js
-
 // Function to get formulas based on subject
 function getFormulasBySubject(subject) {
-  return getFormulasBySubject(subject);
+  return window.getFormulasBySubject(subject);
 }
