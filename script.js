@@ -1,29 +1,8 @@
-// Import the formulas from formulas.js
-import { mathFormulas, physicsFormulas, chemistryFormulas, bioFormulas } from 'formulas.js';
-
-// Function to generate the timetable
 function generateTimetable() {
   const subject = document.getElementById('subject').value;
   const difficulty = document.getElementById('difficulty').value;
   const studyTime = parseInt(document.getElementById('studyTime').value);
 
-  // Function to get formulas based on subject
-  function getFormulasBySubject(subject) {
-    switch (subject) {
-      case 'math':
-        return mathFormulas;
-      case 'physics':
-        return physicsFormulas;
-      case 'chemistry':
-        return chemistryFormulas;
-      case 'bio':
-        return bioFormulas;
-      default:
-        return 'Formulas for this subject are not available.';
-    }
-  }
-
-  // Fetch the formulas for the selected subject
   const formulasContent = getFormulasBySubject(subject);
 
   const content = `
@@ -31,34 +10,27 @@ function generateTimetable() {
     Difficulty: ${difficulty}
     Total Study Time: ${studyTime} minutes
 
+    Important Topics:
+    ${getTopicsBySubject(subject)}
+
     Formulas:
     ${formulasContent}
   `;
 
-  const htmlContent = `
-    <html>
-      <head>
-        <title>Study Timetable</title>
-      </head>
-      <body>
-        <pre>${content}</pre>
-      </body>
-    </html>
-  `;
-
+  // Create a new window to print the content
   const printWindow = window.open('', '_blank');
-  printWindow.document.write(htmlContent);
+  printWindow.document.write('<html><head><title>Study Timetable</title></head><body>');
+  printWindow.document.write('<pre>' + content + '</pre>');
+  printWindow.document.write('</body></html>');
   printWindow.document.close();
 
-  // Wait for content to load before printing
-  printWindow.onload = function () {
-    printWindow.print();
-    printWindow.onafterprint = function () {
-      printWindow.close();
-    };
-  };
+  // Print the window
+  printWindow.print();
 }
 
-// Add an event listener to the button for generating the timetable
-const generateButton = document.getElementById('generateButton');
-generateButton.addEventListener('click', generateTimetable);
+// Function to get topics based on subject
+function getTopicsBySubject(subject) {
+  // Add logic to get topics based on subject
+  // This is just a placeholder
+  return 'Topics for this subject:\nTopic 1: ...\nTopic 2: ...';
+}
