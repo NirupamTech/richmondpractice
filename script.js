@@ -1,5 +1,5 @@
-// Import the getFormulasBySubject function from formulas.js
-import { getFormulasBySubject } from './formulas.js';
+// Import the formulas based on subject
+const { getFormulasBySubject } = require('./formulas.js');
 
 function generateTimetable() {
   const subject = document.getElementById('subject').value;
