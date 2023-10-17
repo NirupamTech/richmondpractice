@@ -3,6 +3,7 @@ function generateTimetable() {
   const difficulty = document.getElementById('difficulty').value;
   const studyTime = parseInt(document.getElementById('studyTime').value);
 
+  // Fetch the formulas for the selected subject
   const formulasContent = getFormulasBySubject(subject);
 
   const content = `
@@ -14,16 +15,25 @@ function generateTimetable() {
     ${formulasContent}
   `;
 
-  const printWindow = window.open('', '_blank');
-  printWindow.document.write('<html><head><title>Study Timetable</title></head><body>');
-  printWindow.document.write('<pre>' + content + '</pre>');
-  printWindow.document.write('</body></html>');
-  printWindow.document.close();
+  const htmlContent = `
+    <html>
+      <head>
+        <title>Study Timetable</title>
+      </head>
+      <body>
+        <pre>${content}</pre>
+      </body>
+    </html>
+  `;
 
-  // Wait for content to load before printing
+  const blob = new Blob([htmlContent], { type: 'text/html' });
+  const url = URL.createObjectURL(blob);
+
+  const printWindow = window.open(url, '_blank');
   printWindow.onload = function() {
     printWindow.print();
     printWindow.onafterprint = function() {
+      URL.revokeObjectURL(url);
       printWindow.close();
     };
   };
@@ -33,6 +43,17 @@ function generateTimetable() {
 
 // Function to get formulas based on subject
 function getFormulasBySubject(subject) {
-  return getFormulasBySubject(subject);
+  // Replace with actual logic to fetch formulas from formulas.js
+  switch (subject) {
+    case 'math':
+      return mathFormulas;
+    case 'physics':
+      return physicsFormulas;
+    case 'chemistry':
+      return chemistryFormulas;
+    case 'bio':
+      return bioFormulas;
+    default:
+      return 'Formulas for this subject are not available.';
+  }
 }
-//
