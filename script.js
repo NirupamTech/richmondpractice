@@ -4,7 +4,6 @@ function generateTimetable() {
   const studyTime = parseInt(document.getElementById('studyTime').value);
 
   const formulasContent = getFormulasBySubject(subject);
-  const topicsContent = getTopicsBySubject(subject);
 
   const content = `
     Subject: ${subject}
@@ -12,7 +11,7 @@ function generateTimetable() {
     Total Study Time: ${studyTime} minutes
 
     Important Topics:
-    ${topicsContent}
+    ${getTopicsBySubject(subject)}
 
     Formulas:
     ${formulasContent}
@@ -27,4 +26,11 @@ function generateTimetable() {
 
   // Print the window
   printWindow.print();
+}
+
+// Function to get topics based on subject
+function getTopicsBySubject(subject) {
+  // Add logic to get topics based on subject
+  // This is just a placeholder
+  return 'Topics for this subject:\nTopic 1: ...\nTopic 2: ...';
 }
