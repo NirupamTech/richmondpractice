@@ -1,4 +1,3 @@
-// Define the formulas for each subject
 const mathFormulas = `
 Math Formulas:
 Formula 1: ...
@@ -23,8 +22,8 @@ Formula 1: ...
 Formula 2: ...
 `;
 
-// Function to get formulas based on subject
-export function getFormulasBySubject(subject) {
+// Export the formulas based on subject
+const getFormulasBySubject = (subject) => {
   switch (subject) {
     case 'math':
       return mathFormulas;
@@ -37,4 +36,4 @@ export function getFormulasBySubject(subject) {
     default:
       return 'Formulas for this subject are not available.';
   }
-}
+};
