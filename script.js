@@ -35,3 +35,4 @@ function generateTimetable() {
 function getFormulasBySubject(subject) {
   return getFormulasBySubject(subject);
 }
+//
