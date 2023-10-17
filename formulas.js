@@ -9,8 +9,6 @@ Topic 2:
   - Formula 2 for Topic 2
 `;
 
-// Define physicsFormulas, chemistryFormulas, and bioFormulas similarly
-
 export const physicsFormulas = `
 Physics Formulas:
 Topic 1:
