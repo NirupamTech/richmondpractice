@@ -1,26 +1,41 @@
-// Define the formulas for each subject
 const mathFormulas = `
 Math Formulas:
-Formula 1: ...
-Formula 2: ...
+Topic 1:
+  - Formula 1 for Topic 1
+  - Formula 2 for Topic 1
+Topic 2:
+  - Formula 1 for Topic 2
+  - Formula 2 for Topic 2
 `;
 
 const physicsFormulas = `
 Physics Formulas:
-Formula 1: ...
-Formula 2: ...
+Topic 1:
+  - Formula 1 for Topic 1
+  - Formula 2 for Topic 1
+Topic 2:
+  - Formula 1 for Topic 2
+  - Formula 2 for Topic 2
 `;
 
 const chemistryFormulas = `
 Chemistry Formulas:
-Formula 1: ...
-Formula 2: ...
+Topic 1:
+  - Formula 1 for Topic 1
+  - Formula 2 for Topic 1
+Topic 2:
+  - Formula 1 for Topic 2
+  - Formula 2 for Topic 2
 `;
 
 const bioFormulas = `
 Biology Formulas:
-Formula 1: ...
-Formula 2: ...
+Topic 1:
+  - Formula 1 for Topic 1
+  - Formula 2 for Topic 1
+Topic 2:
+  - Formula 1 for Topic 2
+  - Formula 2 for Topic 2
 `;
 
 // Function to get formulas based on subject
