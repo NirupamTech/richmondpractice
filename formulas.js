@@ -24,7 +24,26 @@ n(A∪B)=n(A)+n(B)
 17. n(A’) = n(∪) – n(A)
 18. n(U) =  n(A) + n(B) + – n(A⋂B) + n((A∪B)’)
 19. n((A∪B)’) = n(U) +  n(A⋂B) – n(A) – n(B)
-Formula 2: ...
+
+Relations & Functions:
+Relations: A relation R is the subset of the cartesian product of A × B, where A and B are two non-empty elements. It is derived by stating the relationship between the first element and second element of the ordered pair of A × B.
+Inverse of Relation: A and B are any two non-empty sets. Let R be a relationship between two sets A and B. The inverse of relation R, indicated as R-1, is a relationship that connects B and A and is defined by
+R-1 ={(b, a) : (a, b) ∈ R}
+
+where, Domain of R = Range of R-1 and Range of R = Domain of R-1.
+
+Functions: A relation f from a set A to set B is said to be function, if every element of set A has one and only image in set B.
+A cartesian product A × B of two sets A and B is given by: A × B = { (a,b) : a ϵ A, b ϵ B}
+If (a, b) = (x, y); then a = x and b = y
+If n(A) = x and n(B) = y, then n(A × B) = xy and A × ϕϕ = ϕϕ
+The cartesian product: A × B ≠ B × A.
+A function f from set A to set B considers a specific relation type where every element x in set A has one and only one image in set B. A function can be denoted as f : A → B, where f(x) = y.
+Algebra of functions: If the function f : X → R and g : X → R; we have:
+(f + g)(x) = f(x) + g(x) ; x ϵ X
+(f – g)(x) = f(x) – g(x)
+(f . g)(x) = f(x).g(x)
+(kf)(x) = k(f(x)) where k is a real number
+{f/g}(x) = f(x)/g(x), g(x)≠0
 `;
 
 const physicsFormulas = `
