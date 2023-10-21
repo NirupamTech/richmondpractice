@@ -615,8 +615,207 @@ P(A) = P(E1) P (A|E1) + P (E2) P (A|E2) + … + P (En) . P(A|En)
 
 const physicsFormulas = `
 Physics Formulas:
-Formula 1: ...
-Formula 2: ...
+Work, Energy, and Power:
+
+Work, energy, and power are the three most used terms in Physics. They are probably the first thing that a student learns in Physics. Work and energy are considered as the two sides of the same coin.
+
+a. Work
+Definition: In physics, work is said to be done whenever a force applied to an object, makes the object move.
+Formula: Work is calculated by the product of applied force and the displacement of the object.
+W = F × d
+Unit: The SI unit of work the joule (J), also 1J = 1 Nm (newton-meter)
+
+b. Energy
+Definition: Energy is defined as the capacity of a body to do work.
+Formula: The formula potential energy is given by: P.E. = mgh
+The formula for kinetic energy is given by: K.E. = ½(mv²)
+Unit: The SI unit of energy is the same as that of work, and it is the joule (J), this unit is named in honor of an English physicist Sir James Prescott Joule.
+
+c. Power
+Definition: Power can be defined as the rate at which work is done i.e. energy converted.
+Formula: The formula for power is P = W/t
+Unit: The unit of power is Watt (W).
+
+Surface Tension:
+Surface tension is the natural tendency of a liquid surface to resist any force applied on it. Due to surface tension, liquids tend to shrink into the minimum surface area possible. The surface of a liquid behaves like an elastic sheet.
+Mathematically, surface tension is expressed as:
+T=F/L
+
+Where,
+F = force per unit length
+L = length in which the applied force acts
+T = surface tension of the liquid
+
+Simple Harmonic Motion:
+The simple harmonic motion is a periodic motion in which the restoring force on the object is directly proportional to the displacement of the object from the mean position. The restoring force of the simple harmonic motion is always directed towards the mean position.
+The acceleration of a particle under simple harmonic motion (SHM) is given by, a(t) = -ω2 x(t).
+
+Where,
+a = acceleration of the particle
+ω = angular velocity of the particle.
+
+Projectile Motion:
+The projectile motion is a motion in which a body is projected in the air, following a curved path under the influence of gravity. When a body is projected in the horizontal direction with a constant velocity, it undergoes free-fall motion.
+
+The formula for projectile motion is given by:
+Horizontal distance: x = Vx t
+Horizontal velocity: Vx = Vxo 
+Vertical distance: y = Vyot - ½(gt²)
+Vertical velocity: Vy = Vyo  - gt
+
+Where,
+Vx  = the velocity (along the x-axis)
+Vy = the velocity (along the y-axis)
+Vxo = Initial velocity (along the x-axis)
+Vyo = Initial velocity (along the y-axis)
+g = acceleration due to gravity
+t = the time taken
+
+Gravitational Force:
+Every object in the universe attracts every other object with a force that is directly proportional to the masses of the two objects and inversely proportional to the square of the distance between them.
+
+Mathematically, the gravitational force formula is given by: F = Gm1m2/r2
+
+Where,
+G = universal gravitational constant
+m1 = mass of the first object
+m2 = mass of the second object
+r = distance between the two objects
+
+Waves Motion:
+General equation of wave: d2y/dx2 = 1/v2 . d2y/dt2
+
+Notation: Amplitude A, Frequency v, Wavelength λ, Period T, Angular Frequency ω, Wave Number k,
+
+T = 1/v = 2/ ω,
+U = v λ
+K= 2/ λ
+
+y = f(t – x/v), => +x,
+y = f(t + x/v), => -x
+
+Progressive sine wave:
+y = Asin(kx – ωt),
+= Asin(2(x/ λ – t/T))
+
+Sound Wave:
+Displacement wave: s = s0sinω(t – x/u)
+Pressure wave: p = p0cosω(t – x/u)
+P0 = (Bω/u) s0
+Intensity: I = 22B/u . s02v2 = p02v/2B = p02/2pv
+
+Spring Constant:
+Simple Harmonic Motion
+Simple harmonic motion is basically the repeated back and forth movement through a central position, such that the maximum displacement on one side of that position is equal to the maximum displacement on the other side. Each complete vibration's time interval is the same. The force responsible for the motion is always directed towards the direction of equilibrium and is directly proportional to the distance from it.
+Some common examples of SHM are pendulums. If the resting position of the pendulum is assumed to be the center, then when the pendulum moves, it is observed that the distance it covers on either side of the center is equal, and the pendulum always moves toward the center after covering it’s maximum distance. We shall refer to the center as equilibrium.
+Springs usually have SHM. Springs have their own natural “spring constants” which define how stiff they are. Hooke's law is a famous law that explains the SHM and gives a formula for the force applied using the spring constant.
+When applied to a spring, we can observe that when the spring is stretched in both directions then both the ends of the spring recoil toward equilibrium. This is very similar to how a pendulum behaves even though it does not move in a circular fashion. 
+
+Hooke’s Law
+Hooke's law defines the relation between the force applied and the distance stretched in the spring. The force required to compress or extend a spring is directly proportional to the distance it is extended.
+This is based on Newton's third law of motion which states that for every action, there is an equal and opposite reaction. Think of stretching the spring as the action, and the natural recoiling of the spring to be the reaction.
+According to Newton's Third Law of Motion, it pulls back with a restoring force when spring is pulled. This restoring force follows the Law of Hooke, which relates the force of the spring to the spring constant. This relation when visualised mathematically, is called the spring constant formula.
+
+Force of the Spring =  -(Spring Constant) x (Displacement)
+
+F=−K*X
+
+F=−KX
+
+The negative sign indicates the opposite direction of the reaction force.
+
+Where,
+
+F: The spring's restoring force directed towards equilibrium.
+
+K: The constant of spring in N.m-1.
+
+X: The displacement of the spring from its position of equilibrium.
+
+
+Spring Constant (K)
+Now, the Spring constant is defined as the force required to restore the spring to its original shape per unit of extension of the spring. This also means that after knowing the spring constant we can easily find how much force is needed to deform the spring. Because if we apply more force than what the spring can handle, then it will lose the property to exhibit SHM any more.
+K=−F * x
+K=−Fx
+Its unit is N/m (Newton per metre).
+
+Acceleration:
+General Formula of Acceleration
+We already know that Velocity is a speed with direction; therefore, it is a vector quantity. The Acceleration ‘a’ is given as: a=Change in Velocity/Time Taken
+      
+This formula states that the rate of change in Velocity is the Acceleration, or if the Velocity of an object changes from its initial value ‘u’ to the final value ‘v’, then the expression can be simply written as: a=(v−u)/t
+
+If v0,vt and t represents the initial Velocity, final Velocity and the time taken for the change in Velocity, then, the Acceleration is given by:
+a=(vt-v0)/t
+
+In one dimensional motion, we can use;
+a=(vt−v0t)/t
+
+Acceleration Formula
+If r
+represents displacement vector and v→=dr→dt
+ represents the velocity, then;
+
+Acceleration:  a=dv/dt=d2v/d2t
+In one dimensional motion, where x is the displacement, and v=dr/dt is the Velocity, then;
+a=dv/dt=d2x/d2t
+
+Amplitude Formulas:
+Amplitude refers to the maximum change of a variable from its mean value (when the variable oscillates about this mean value). In to and fro motion of a particle about a mean position, it is the maximum displacement from its mean position. Similarly, amplitudes are defined for periodic pressure variations, periodic current or voltage variations, periodic variations in electric or magnetic fields etc.
+There is no particular formula for amplitude. It’s available from the equations or the graphical representations of such variations.
+If y = A sin ωt ampere. 
+
+The largest deviation of a variable from its mean value is referred to as amplitude. The sine and cosine functions can be calculated using the amplitude formula. A is the symbol for amplitude. The sine (or cosine) function can be written as follows:
+x = A sin (ωt + ϕ)   or   x = A cos (ωt + ϕ)
+
+Here,
+x = displacement of wave (meter)
+A = amplitude
+ω = angular frequency (rad/s)
+t = time period
+ϕ = phase angle
+The amplitude formula is also expressed as the average of the sine or cosine function's maximum and minimum values. The absolute value of the amplitude is always used.
+
+Projectile Motion:
+
+Time of Flight
+It is the total amount of time the projectile remains in the air.
+In Y direction total displacement (Sy) = 0.
+Taking motion in Y direction, Sy = uyt – 1/2(gt2)   
+
+(Here, uy = u sinθ and Sy = 0)
+i.e.      0 = usinθ – 1/2(gt2)
+t = 2usinθ/g
+Time of Flight(t) = 2usinθ/g
+
+Maximum Height 
+It is the particle's highest point (point A). The vertical component of the velocity (Vy) will be zero when the ball reaches point A. 
+That is, 0 = (usinθ)2 – 2gHmax      
+
+( S = Hmax, vy = 0 and uy = u sin θ )
+The Maximum Height of the projectile is:
+Maximum Height (Hmax) = u2sin2θ/2g
+
+Horizontal Range 
+It is defined as the horizontal distance covered to the maximum distance possible.
+The horizontal range is a distance (OB) is:
+OB = Horizontal component of velocity(ux) * Total time(t)   
+(ux = u cosθ and t = 2usinθ/g)
+That is, Range(R) = ucosθ * 2usinθ/g     
+
+Horizontal Range of the projectile is:
+
+Horizontal Range(R) = u2sin2θ/g  
+
+( sin2θ = 2cosθsinθ )
+ 
+The Equation of Trajectory
+The trajectory equation is the path taken by a particle during projectile motion. The following is the equation:
+
+y = x tanθ – gx2/2u2cos2θ
+
+
+
 `;
 
 const chemistryFormulas = `
